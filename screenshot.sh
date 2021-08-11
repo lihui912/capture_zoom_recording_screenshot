@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#########################
+# Written by Chin Li Hui
+# for the sake of ease to submit teaching claim
+#########################
+
 while getopts f: flag
 do
         case "${flag}" in
