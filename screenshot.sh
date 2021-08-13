@@ -6,7 +6,6 @@
 #########################
 
 PWD="$(pwd)"
-TIMESTAMP="$(date +%Y%m%d%H%M%S)"
 
 while getopts f:p: flag
 do
@@ -18,8 +17,8 @@ done
 
 echo "Input video file: $video_file"
 
-echo "Generating start.jpg"
+echo "Generating ${prefix}_screenshot_start.jpg"
 ffmpeg -y -ss 100 -i "${video_file}" -q:v 5 -frames:v 1 "${PWD}"/"${prefix}"_screenshot_start.jpg -hide_banner -loglevel quiet
 
-echo "Generating end.jpg"
+echo "Generating ${prefix}_screenshot_end.jpg"
 ffmpeg -y -sseof -100 -i "${video_file}" -q:v 5 -frames:v 1 "${PWD}"/"${prefix}"_screenshot_end.jpg -hide_banner -loglevel quiet
