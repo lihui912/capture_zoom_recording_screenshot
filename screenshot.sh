@@ -23,6 +23,15 @@ check_required_inputs () {
         return 0
 }
 
+check_video_file_exists () {
+        if [ ! -f "$1" ];
+        then
+                echo "Video file not found: $1."
+                echo "Exit with error."
+                exit 255
+        fi
+}
+
 while getopts f:p: flag
 do
         case "${flag}" in
@@ -40,6 +49,7 @@ then
 fi
 
 check_required_inputs "${video_file}"
+check_video_file_exists "${video_file}"
 
 echo "Input video file: $video_file"
 
