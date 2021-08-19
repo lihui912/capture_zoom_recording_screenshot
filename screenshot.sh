@@ -17,6 +17,7 @@ do
                 f) video_file=${OPTARG};;
                 p) prefix=${OPTARG};;
                 h) print_help ; exit;;
+                *) print_help ; exit 1;;
         esac
 done
 
