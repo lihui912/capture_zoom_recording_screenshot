@@ -7,11 +7,16 @@
 
 PWD="$(pwd)"
 
+print_help () {
+        echo "Usage: $0 -p <output_prefix> -f <path_to_video_file>"
+}
+
 while getopts f:p: flag
 do
         case "${flag}" in
                 f) video_file=${OPTARG};;
                 p) prefix=${OPTARG};;
+                h) print_help ; exit;;
         esac
 done
 
