@@ -12,6 +12,17 @@ print_help () {
         echo "Usage: $0 -p <output_prefix> -f <path_to_video_file>"
 }
 
+check_required_inputs () {
+        if [ -z "$video_file" ];
+        then
+                echo "Video file not provided. exit."
+                print_help
+                exit 255
+        fi
+
+        return 0
+}
+
 while getopts f:p: flag
 do
         case "${flag}" in
@@ -27,6 +38,8 @@ then
         echo "ffmpeg not found. Exit with error."
         exit 255
 fi
+
+check_required_inputs "${video_file}"
 
 echo "Input video file: $video_file"
 
