@@ -6,6 +6,7 @@
 #########################
 
 PWD="$(pwd)"
+FFMPEG="$(which ffmpeg)"
 
 print_help () {
         echo "Usage: $0 -p <output_prefix> -f <path_to_video_file>"
@@ -20,6 +21,12 @@ do
                 *) print_help ; exit 1;;
         esac
 done
+
+if [ -z "$FFMPEG" ];
+then
+        echo "ffmpeg not found. Exit with error."
+        exit 255
+fi
 
 echo "Input video file: $video_file"
 
