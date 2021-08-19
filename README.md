@@ -1,3 +1,5 @@
+A simple Bash script to capture screenshot from 100th seconds and 100th seconds from end of video for submitting claim.
+
 Usage:
 
 `./screenshot.sh -f <input_file> -p <prefix>` 
