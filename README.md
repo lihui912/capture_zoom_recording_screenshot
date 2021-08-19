@@ -1,14 +1,14 @@
 A simple Bash script to capture screenshots from 100th seconds and 100th seconds from the end of the video for submitting the claim.
 
-## Requirement: ##
+## Requirement ##
 
 This script uses FFMpeg to generate the screenshots. Run `apt install ffmpeg` if your computer hasn't had one yet.
 
-## Usage: ##
+## Usage ##
 
 `./screenshot.sh -f <input_file> -p <prefix>` 
 
-### Example: ###
+### Example ###
 
 `./screenshot.sh -f zoom_0.mp4 -p 20210819`
 
