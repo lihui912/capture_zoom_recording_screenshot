@@ -2,6 +2,7 @@
 
 #########################
 # Written by Chin Li Hui
+# License: GNU General Public License v3.0
 # for the sake of ease to submit teaching claim
 #########################
 
